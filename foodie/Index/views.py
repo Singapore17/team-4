@@ -4,10 +4,6 @@ from django.views.generic import View
 from django.views.generic import RedirectView, FormView
 from Index.forms import *
 
-class MainPage(View):
-	def get(self, request, *args, **kwargs):
-		return HttpResponse("Main page view")
-
 class DonationFormSubmission(FormView):
 	template_name 	= "DonationForm.html"
 	form_class 		= DonationsForms
@@ -22,3 +18,8 @@ class DonationFormSubmission(FormView):
 
 	def form_invalid(self, form):
 		return super(DonationFormSubmission, self).form_invalid(form)
+
+class DonationFormSubmissionRedirect(RedirectView):
+	permanent 		= False
+	query_string 	= True
+	pattern_name 	= 'main-page'
