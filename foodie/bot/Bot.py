@@ -10,6 +10,7 @@ FROM_EMAIL  = "shaocongcongcong" + ORG_EMAIL
 FROM_PWD    = "970520@dsc"
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT   = 993
+pwd         = os.getcwd()
 
 class Bot():
     def __init__(self, email, password, port, server):
@@ -67,7 +68,7 @@ class Bot():
 
             email_body = data[0][1]
             m = email.message_from_bytes(email_body)
-            parent_path = '/Users/DongShaocong/desktop/requests/'
+            parent_path = os.path.join(pwd, 'tmp')
 
             if m.get_content_maintype() == 'multipart':
                 for part in m.walk():
