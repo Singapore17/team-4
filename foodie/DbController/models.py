@@ -36,7 +36,7 @@ class DonationsTable(models.Model):
 	donor_id 	= models.ForeignKey(DonorsTable, on_delete=models.CASCADE)
 	item_id 	= models.ForeignKey(ItemTable, on_delete=models.CASCADE)
 	item_qty 	= models.IntegerField()
-	expiry 		= models.DateTimeField()
+	expiry 		= models.DateTimeField(auto_now=True)
 
 	def __str__(self):
 		return "Donations - {0}".format(self.donor_id.name)

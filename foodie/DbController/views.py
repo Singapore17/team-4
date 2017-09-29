@@ -8,8 +8,8 @@ class DbAllocationController(object):
 
 class DbDonorsController(object):
 	@classmethod
-	def create(cls):
-		pass
+	def get(cls, name):
+		return DonorsTable.objects.filter(name=name).first()
 
 class DbDonationsController(object):
 	@classmethod
@@ -23,6 +23,12 @@ class DbDonationsController(object):
 			else:
 				return_dict[item_name] 	= each_set.item_qty
 		return
+
+	@classmethod
+	def add(cls, donor_obj, item_id, item_qty):
+		obj 	= DonationsTable(donor_id=donor_obj, item_id=item_id, item_qty=item_qty)
+		obj.save()
+		return 
 
 class DbStockCountController(object):
 	@classmethod

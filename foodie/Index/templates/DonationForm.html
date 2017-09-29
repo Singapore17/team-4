@@ -3,55 +3,37 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     </head>                  
     <h1 style="padding-left:30px">Donor Form</h1>
-    <!-- <form>
-        Organisation:
-        <input type="text" name="organisation"/><br/>
-        Contact Person:
-        <input type="text" name="contact"/><br/>
-        Email:
-        <input type="text" name="email"/><br/>
-        Contact:
-        <input type="text" name="contact"/>
+    <form style="padding:19px" method="post" action="#">
+    <div class="form-group">
+        <div class="col-xs-12 col-sm-5">
+            <label for="organisation">Organisation</label>
+            <input name="organisation" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organisation">
+            <small id="emailHelp" class="form-text text-muted">In full</small>
+            <div class="form-group">
+        <label for="contact">Contact Person</label>
+        <input name="contactPerson" type="text" class="form-control" id="exampleInputPassword1" placeholder="Contact">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" type="text" class="form-control" id="exampleInputPassword1" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact</label>
+        <input name="contact" type="text" class="form-control" id="exampleInputPassword1" placeholder="Contact Details">
+    </div>
+        </div>
         
-      
-        Items: <br/>
-        
-    </form> -->
-</html>
-<form style="padding:19px">
-  <div class="form-group">
-    <div class="col-xs-12 col-sm-5">
-        <label for="organisation">Organisation</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organisation">
-        <small id="emailHelp" class="form-text text-muted">In full</small>
-        <div class="form-group">
-    <label for="contact">Contact Person</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Contact">
-  </div>
-  <div class="form-group">
-    <label for="contact">Email</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Email Address">
-  </div>
-  <div class="form-group">
-    <label for="contact">Contact</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Contact Details">
-  </div>
     </div>
     
-  </div>
-</form>
-
-
-
-<form class="form-horizontal well" style="clear:both" action="/" method="post">
-    {% csrf_token %}
+<div class="form-horizontal well" style="clear:both" >
     <div class="form-group">
       <div class="col-xs-5">
          <label class="col-xs-1 control-label" style="text-align:left">Item</label>
          <div class="col-xs-12 col-lg-10">
-            <select name="dropdown" class="form-control">
+            <select name="dropdown1" class="form-control">
                 <option value="Milk">Baby Milk Powder</option>
                 <option value="Tuna">Tuna and Beans</option>
                 <option value="Chicken">Chicken</option>
@@ -61,7 +43,7 @@
       <div class="col-xs-5">
            <label class="col-xs-1 control-label" style="text-align:left">Qty</label>
            <div class="col-xs-12 col-lg-3" > 
-           <input id="memory" type="text" class="form-control">
+           <input name="qty1" id="memory" type="text" class="form-control">
             </div> 
       </div>
    </div>
@@ -69,7 +51,7 @@
       <div class="col-xs-5">
          <label class="col-xs-1 control-label" style="text-align:left">Item</label>
          <div class="col-xs-12 col-lg-10">
-            <select name="dropdown" class="form-control">
+            <select name="dropdown2" class="form-control">
                 <option value="Milk">Baby Milk Powder</option>
                 <option value="Tuna">Tuna and Beans</option>
                 <option value="Chicken">Chicken</option>
@@ -79,7 +61,7 @@
       <div class="col-xs-5">
            <label class="col-xs-1 control-label" style="text-align:left">Qty</label>
            <div class="col-xs-12 col-lg-3" > 
-           <input id="memory" type="text" class="form-control">
+           <input name="qty2" id="memory" type="text" class="form-control">
             </div> 
       </div>
    </div>
@@ -87,7 +69,7 @@
       <div class="col-xs-5">
          <label class="col-xs-1 control-label" style="text-align:left">Item</label>
          <div class="col-xs-12 col-lg-10">
-            <select name="dropdown" class="form-control">
+            <select name="dropdown3" class="form-control">
                 <option value="Milk">Baby Milk Powder</option>
                 <option value="Tuna">Tuna and Beans</option>
                 <option value="Chicken">Chicken</option>
@@ -97,12 +79,45 @@
       <div class="col-xs-5">
            <label class="col-xs-1 control-label" style="text-align:left">Qty</label>
            <div class="col-xs-12 col-lg-3" > 
-           <input id="memory" type="text" class="form-control">
+           <input name="qty3" id="memory" type="text" class="form-control">
             </div> 
       </div>
    </div>
    
-   
-   <input type="submit" value="Submit" class="btn btn-primary" style="margin-left:15px"/>
+    <button type="button" class="btn btn-primary specific" style="margin-left:15px">SUBMIT</button> 
+   <!-- <input value="Submit" class="btn btn-primary" style="margin-left:15px"/> -->
+   <!-- <input type="Submit" class="btn btn-primary specific" style="margin-left:15px"/> -->
 </form>
+<script>
+    $( document ).ready(function() {
+        $(".specific").click(function() {
+            var data = { 
+            ORGANISATION : $('input[name="organisation"]').val(), 
+            CONTACTPERSON : $('input[name="contactPerson"]').val(),
+            EMAIL : $('input[name="email"]').val(),
+            CONTACT : $('input[name="contact"]').val(),
+            baby_milk_powder1 : $('select[name="dropdown1"]').val(),
+            baby_milk_powder : $('input[name="qty1"]').val(),
+            tuna_and_beans2 : $('select[name="dropdown2"]').val(),
+            tuna_and_beans : $('input[name="qty2"]').val(),
+            chicken3 : $('select[name="dropdown3"]').val(),
+            chicken : $('input[name="qty3"]').val(),
+        };
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url:   "/",
+            data: JSON.stringify(data),
+            dataType:'json'
+        }).
+        done(function(data){
+            //handle data.WHATEVER
+        });
+
+        });
+    });
+       
+</script>
+</html>
+
 
