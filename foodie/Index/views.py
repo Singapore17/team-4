@@ -9,11 +9,13 @@ class MainPage(View):
 		return HttpResponse("Main page view")
 
 class DonationFormSubmission(FormView):
-	template_name 	= "<?>"
+	template_name 	= "DonationForm.html"
 	form_class 		= DonationsForms
 	success_url 	= '/donation-form-received'
 
 	def form_valid(self, form, *args, **kwargs):
+		import IPython
+		IPython.embed()
 		cleaned_form_dict 	= form.clean()
 		# Update DB here
 		return super(DonationFormSubmission, self).form_valid(form)
